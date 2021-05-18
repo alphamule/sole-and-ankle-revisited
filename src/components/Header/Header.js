@@ -29,7 +29,7 @@ const Header = () => {
           <NavLink href="/new">New&nbsp;Releases</NavLink>
           <NavLink href="/men">Men</NavLink>
           <NavLink href="/women">Women</NavLink>
-          <NavLink href="/kids">Kids</NavLink>
+          <NavLink href="/kids">Kids And Other Small Words</NavLink>
           <NavLink href="/collections">Collections</NavLink>
         </DesktopNav>
         <Side>
@@ -64,6 +64,7 @@ const MainHeader = styled.div`
   padding: 18px 32px;
   height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
+  overflow: scroll;
 
   @media ${QUERIES.tabletAndSmaller} {
     border-top: 4px solid ${COLORS.gray[900]};
@@ -77,7 +78,12 @@ const MainHeader = styled.div`
 
 const DesktopNav = styled.nav`
   display: flex;
-  gap: 48px;
+  gap: clamp(
+    1.5rem,
+    5vw - 1.5rem,
+    4rem
+  );
+
   margin: 0px 48px;
 
   @media ${QUERIES.tabletAndSmaller} {
@@ -114,6 +120,7 @@ const NavLink = styled.a`
   text-decoration: none;
   color: ${COLORS.gray[900]};
   font-weight: ${WEIGHTS.medium};
+  white-space: nowrap;
 
   &:first-of-type {
     color: ${COLORS.secondary};
