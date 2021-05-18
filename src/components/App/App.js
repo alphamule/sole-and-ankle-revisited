@@ -24,6 +24,10 @@ const Main = styled.main`
   @media ${QUERIES.tabletAndSmaller} {
     padding: 48px 32px;
   }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    padding: 16px;
+  }
 `;
 
 export default App;
